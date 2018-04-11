@@ -1,0 +1,99 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../redux-store/redux-store.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+
+<dom-module id="education-location-details">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+        border-top: 1px solid lightgrey;
+      }
+      
+      li {
+        line-height: 5vh;
+      }
+    </style>
+    <ul>
+      <li>
+        <iron-icon class="icon-work" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0003s_0004s_0000s_0000_work-icon.png"></iron-icon>
+         Work at [[work]]</li>
+      <li>
+        <iron-icon class="icon-study" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0003s_0004s_0001s_0000_studies-icon.png"></iron-icon>
+         Studied at [[study]]</li>
+      <li>
+        <iron-icon class="icon-live" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0003s_0004s_0002s_0000_lives-icon.png"></iron-icon>
+         Lives in [[live]]</li>
+      <li>
+        <iron-icon class="icon-location" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0003s_0004s_0003s_0000_from-icon.png"></iron-icon>
+         From at [[location]]</li>
+    </ul>
+  </template>
+
+  <script>
+    /**
+     * `education-location-details` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class EducationLocationDetails extends ReduxStore(Polymer.Element) {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'education-location-details';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+          work: {
+            type: String,
+            statePath: 'educationLocationDetails.work'
+          },
+          study: {
+            type: String,
+            statePath: 'educationLocationDetails.study'
+          },
+          live: {
+            type: String,
+            statePath: 'educationLocationDetails.live'
+          },
+          location: {
+            type: String,
+            statePath: 'educationLocationDetails.location'
+          }
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+
+        Polymer.RenderStatus.afterNextRender(this, function () {
+
+        });
+      }
+
+    }
+
+    window.customElements.define(EducationLocationDetails.is, EducationLocationDetails);
+  </script>
+</dom-module>

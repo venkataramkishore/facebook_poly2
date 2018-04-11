@@ -1,0 +1,74 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../redux-store/redux-store.html">
+<link rel="import" href="../common-elements/profile-header/profile-header.html">
+<link rel="import" href="../common-elements/fb-footer/fb-footer.html">
+<link rel="import" href="./education-location-details/education-location-details.html">
+<link rel="import" href="./nav-about-photos-friends/nav-about-photos-friends.html">
+<link rel="import" href="./nav-friends-following-message/nav-friends-following-message.html">
+<link rel="import" href="./dp-pic/dp-pic.html">
+<link rel="import" href="../shared-styles/fb-shared-styles.html">
+<dom-module id="facebook-profile">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block
+      }
+    </style>
+    <profile-header></profile-header>
+    <dp-pic></dp-pic>
+    <nav-friends-following-message></nav-friends-following-message>
+    <education-location-details></education-location-details>
+    <nav-about-photos-friends></nav-about-photos-friends>
+    <fb-footer elements></fb-footer>
+  </template>
+  <script>
+    /**
+     * `facebook-app` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class FacebookProfile extends ReduxStore(Polymer.Element) {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'facebook-profile';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+
+        Polymer.RenderStatus.afterNextRender(this, function () {
+
+        });
+      }
+
+    }
+
+    window.customElements.define(FacebookProfile.is, FacebookProfile);
+  </script>
+</dom-module>

@@ -1,0 +1,81 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../redux-store/redux-store.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+
+<dom-module id="like-comment-share">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+        height: 8vh;
+        border-top: 2px solid lightgrey;
+      }
+
+      nav {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+    </style>
+
+    <nav>
+      <span>
+        <iron-icon class="icon-emoji" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0003s_0000s_0001_hand-icon.png"></iron-icon> Like</span>
+      <span>
+        <iron-icon class="icon-emoji" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0003s_0001s_0001_bubble-icon.png"></iron-icon> Comment</span>
+      <span>
+        <iron-icon class="icon-emoji" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0003s_0002s_0001_arrow-icon.png"></iron-icon> Share</span>
+    </nav>
+
+  </template>
+
+  <script>
+    /**
+     * `like-comment-share` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class LikeCommentShare extends ReduxStore(Polymer.Element) {
+
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'like-comment-share';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+      }
+
+    }
+
+    window.customElements.define(LikeCommentShare.is, LikeCommentShare);
+  </script>
+</dom-module>

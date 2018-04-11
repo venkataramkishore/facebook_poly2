@@ -1,0 +1,132 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-time/iron-time.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+<dom-module id="profile-header">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+        background-color: var(--profile-header-background-color, var(--primary-color));
+        color: var(--primary-icon-text-color);
+        padding: 5px;
+      }
+
+      header {
+        display: flex;
+        flex: 0 1 auto;
+        align-items: center;
+      }
+
+      .left {
+        flex: 0 1 auto;
+      }
+
+      .center {
+        flex: 1 0 auto;
+        text-align: center;
+      }
+
+      .right {
+        flex: 0 1 auto;
+      }
+
+      .header-line {
+        margin: 2px;
+        justify-content: center;
+      }
+
+      paper-input {
+        margin: 0 7px 0 7px;
+        color: var(--primary-icon-text-color);
+        background-color: #1d1c1c8c;
+        border-radius: 10px;
+      }
+    </style>
+    <header>
+      <div class="left">
+        <iron-icon class="icon-network" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0000s_0000s_0000_signal.png"></iron-icon>
+        <iron-icon class="icon-company" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0000s_0000s_0001_Company.png"></iron-icon>
+        <iron-icon class="icon-wifi" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0000s_0000s_0002_wifi.png"></iron-icon>
+      </div>
+      <iron-time class="center" datetime="[[currTime]]" format="HH:mm"></iron-time>
+      <div class="right">
+        <iron-icon class="icon-battery" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0000s_0000s_0004_battery.png">
+        </iron-icon>
+      </div>
+    </header>
+    <header>
+      <div class="left">
+        <iron-icon class$="icon-left-arrow {{_isLeftArrowVisible()}}" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0000s_0000_arrow.png"></iron-icon>
+        <iron-icon class$="icon-camera {{_isCameraVisible()}}" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0000s_0000_camera-icon.png"></iron-icon>
+      </div>
+      <paper-input class="center" no-label-float placeholder="Your Name" aria-placeholder="Your Name">
+        <iron-icon class="icon-search" slot="prefix" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0000s_0002_search-icon.png"></iron-icon>
+      </paper-input>
+      <span class="right">
+        <iron-icon class="icon-messenger" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0000s_0001_message-icon.png"></iron-icon>
+      </span>
+    </header>
+  </template>
+
+  <script>
+    /**
+     * `profile-header` in a profile section a header with left navigation, search and messenger icons.
+     *
+     * @summary header of profile page.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class ProfileHeader extends Polymer.Element {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'profile-header';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+          showCamera: Boolean,
+          currTime: {
+            type: Date,
+            value: function () {
+              return new Date();
+            }
+          }
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      _isLeftArrowVisible() {
+        return !this.showCamera ? 'show' : 'hide';
+      }
+
+      _isCameraVisible() {
+        return this.showCamera ? 'show' : 'hide';
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+      }
+    }
+
+    window.customElements.define(ProfileHeader.is, ProfileHeader);
+  </script>
+</dom-module>

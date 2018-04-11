@@ -1,0 +1,429 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./icon-store.html">
+<dom-module id="fb-shared-styles">
+  <template>
+    <style include="icon-store">
+      html,
+      body,
+      div,
+      span,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      abbr,
+      address,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      samp,
+      small,
+      strong,
+      sub,
+      sup,
+      var,
+      b,
+      i,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+      }
+
+      @-ms-viewport {}
+
+      html {
+        box-sizing: border-box;
+        -ms-overflow-style: scrollbar;
+      }
+
+      a,
+      li,
+      span,
+      figcaption,
+      time,
+      h4,
+      h5,
+      p {
+        font-size: 2vw;
+      }
+
+
+      ul,
+      li {
+        list-style-type: none;
+        align-content: center;
+        padding-left: 5px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      .row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+      }
+
+      [class*="col-"] {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+      }
+
+      .col-1 {
+        max-width: 8.333333333333333%;
+      }
+
+      .col-2 {
+        max-width: 16.666666666666667%;
+      }
+
+      .col-3 {
+        max-width: 25%;
+      }
+
+      .col-4 {
+        max-width: 33.333333333333333%;
+      }
+
+      .col-5 {
+        max-width: 41.666666666666667%;
+      }
+
+      .col-6 {
+        max-width: 50%;
+      }
+
+      .col-7 {
+        max-width: 58.333333333333333%;
+      }
+
+      .col-8 {
+        max-width: 66.666666666666667%;
+      }
+
+      .col-9 {
+        max-width: 75%;
+      }
+
+      .col-10 {
+        max-width: 83.333333333333333%;
+      }
+
+      .col-11 {
+        max-width: 91.666666666666667%;
+      }
+
+      .col-12 {
+        max-width: 100%;
+      }
+
+      .offset-l-1 {
+        margin-left: 8.333333333333333%;
+      }
+
+      .offset-l-2 {
+        margin-left: 16.66666666666666%;
+      }
+
+      .offset-l-3 {
+        margin-left: 25%;
+      }
+
+      .offset-r-1 {
+        margin-left: 8.333333333333333%;
+      }
+
+      .work,
+      .study,
+      .live,
+      .location {
+        width: 4vw;
+        height: 4vh;
+      }
+
+      figcaption {
+        text-align: center;
+      }
+
+      .vertical-line {
+        width: 1px;
+        background-color: lightgrey;
+        height: 50%;
+        float: left;
+      }
+
+      .user-dp {
+        background-repeat: no-repeat;
+        background-image: url('../../../images/Assets/desktop/[1280x800]-Facebook-Full_0003s_0001s_0001s_0002s_0000_ME!.png');
+        width: 5vw;
+        height: 5vw;
+      }
+
+      .grey-text {
+        color: lightgrey;
+      }
+
+      .friends-list {
+        width: 16vw;
+        height: 8vh;
+        border-radius: 30px;
+      }
+
+      @media only screen and (max-device-width: 320px) {
+        a,
+        li,
+        span,
+        figcaption,
+        time,
+        h4,
+        h5,
+        p {
+          font-size: 3vw;
+        }
+
+        .user-dp {
+          width: 12vw;
+          height: 11vw;
+        }
+        
+        .friends-list {
+          width: 16vw;
+          height: 8vh;
+        }
+      }
+
+      @media only screen and (max-device-width: 375px) and (min-device-width: 321px){
+        a,
+        li,
+        span,
+        figcaption,
+        time,
+        h4,
+        h5,
+        p {
+          font-size: 3vw;
+        }
+        .user-dp {
+          width: 12vw;
+          height: 11vw;
+        }
+        .friends-list {
+          width: 16vw;
+          height: 8vh;
+        }
+      }
+
+      @media only screen and (max-device-width: 480px) and (min-device-width: 321px)  {
+
+        a,
+        li,
+        span,
+        figcaption,
+        time,
+        h4,
+        h5,
+        p {
+          font-size: 3vw;
+        }
+
+        .row {
+          -webkit-box-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+        }
+        .col-xs-hidden {
+          display: none;
+        }
+        .col-xs-1 {
+          max-width: 8.333333333333333%;
+        }
+        .col-xs-2 {
+          max-width: 16.666666666666667%;
+        }
+        .col-xs-3 {
+          max-width: 25%;
+        }
+        .col-xs-4 {
+          max-width: 33.333333333333333%;
+        }
+        .col-xs-5 {
+          max-width: 41.666666666666667%;
+        }
+        .col-xs-6 {
+          max-width: 50%;
+        }
+        .col-xs-7 {
+          max-width: 58.333333333333333%;
+        }
+        .col-xs-8 {
+          max-width: 66.666666666666667%;
+        }
+        .col-xs-9 {
+          max-width: 75%;
+        }
+        .col-xs-10 {
+          max-width: 83.333333333333333%;
+        }
+        .col-xs-11 {
+          max-width: 91.666666666666667%;
+        }
+        .col-xs-12 {
+          max-width: 100%;
+        }
+
+        .offset-l-1,
+        .offset-l-2,
+        .offset-l-3,
+        .offset-r-1 {
+          margin-left: 0;
+        }
+
+        .user-dp {
+          width: 12vw;
+          height: 11vw;
+        }
+
+        .friends-list {
+          width: 14vw;
+          height: 9vh;
+        }
+      }
+
+      @media only screen and (max-device-width: 768px) and (min-device-width: 481px)  {
+        a,
+        li,
+        span,
+        figcaption,
+        time,
+        h4,
+        h5,
+        p {
+          font-size: 2vw;
+        }
+
+        .user-dp {
+          width: 5vw;
+          height: 5vw;
+        }
+        .friends-list {
+          width: 8vw;
+          height: 9vh;
+        }
+      }
+
+      @media only screen and (max-device-width: 1024px) and (min-device-width: 769px)  {
+        a,
+        li,
+        span,
+        figcaption,
+        time,
+        h4,
+        h5,
+        p {
+          font-size: 2vw;
+        }
+
+        .user-dp {
+          width: 5vw;
+          height: 5vw;
+        }
+
+        .friends-list {
+          width: 8vw;
+          height: 9vh;
+        }
+      }
+
+      @media only screen and (max-device-width: 1440px) and (min-device-width: 1025px)  {
+        a,
+        li,
+        span,
+        figcaption,
+        time,
+        h4,
+        h5,
+        p {
+          font-size: 2vw;
+        }
+
+        .user-dp {
+          width: 5vw;
+          height: 5vw;
+        }
+
+        .friends-list {
+          width: 7vw;
+          height: 8vh;
+        }
+      }
+
+      .show {
+        display: block;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
+  </template>
+
+</dom-module>

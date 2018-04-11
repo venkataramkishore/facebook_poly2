@@ -1,0 +1,88 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../redux-store/redux-store.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+
+<dom-module id="count-like-comment-share">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+        height: 8vh;
+        border-top: 2px solid lightgrey;
+      }
+
+      nav {
+        height: inherit;
+        display: flex;
+        align-items: center;
+      }
+      span {
+        margin-right: 15px;
+      }
+    </style>
+
+    <nav>
+      <span>
+        <iron-icon class="icon-emoji" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0002s_0000s_0000_Like-icon.png"></iron-icon>
+        <iron-icon class="icon-emoji" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0002s_0000s_0001_Heart-icon.png"></iron-icon>
+        <iron-icon class="icon-emoji" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0002s_0000s_0002_Amazing-face.png"></iron-icon> 3675</span>
+      <span>
+        2475 comments</span>
+      <span>
+        198 sharings</span>
+    </nav>
+
+  </template>
+
+  <script>
+    /**
+     * `count-like-comment-share` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class CountLikeCommentShare extends ReduxStore(Polymer.Element) {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'count-like-comment-share';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+
+        Polymer.RenderStatus.afterNextRender(this, function () {
+
+        });
+      }
+
+    }
+
+    window.customElements.define(CountLikeCommentShare.is, CountLikeCommentShare);
+  </script>
+</dom-module>

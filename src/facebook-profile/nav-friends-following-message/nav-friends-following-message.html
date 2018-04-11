@@ -1,0 +1,93 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+
+<dom-module id="nav-friends-following-message">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 1px solid lightgrey;
+      }
+
+      figure {
+        flex: 0 1 auto;
+        margin: 15px;
+      }
+
+    </style>
+      <figure>
+        <iron-icon class="icon-friends" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0003s_0000s_0000_friends-icon.png"></iron-icon>
+        <figcaption>
+          <a href="">Friends</a>
+        </figcaption>
+      </figure>
+      <figure>
+        <iron-icon class="icon-following" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0003s_0001s_0000_following-icon.png"></iron-icon>
+        <figcaption>
+          <a href="">Following</a>
+        </figcaption>
+      </figure>
+      <figure>
+        <iron-icon class="icon-message" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0003s_0002s_0000_message-icon.png"></iron-icon>
+        <figcaption>Messages</figcaption>
+      </figure>
+      <figure>
+        <iron-icon class="icon-more" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0003s_0003s_0000_Shape-2.png"></iron-icon>
+        <figcaption>More</figcaption>
+      </figure>
+  </template>
+
+  <script>
+    /**
+     * `nav-friends-following-message` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class NavFriendsFollowingMessage extends Polymer.Element {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'nav-friends-following-message';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+
+        Polymer.RenderStatus.afterNextRender(this, function () {
+
+        });
+      }
+
+    }
+
+    window.customElements.define(NavFriendsFollowingMessage.is, NavFriendsFollowingMessage);
+  </script>
+</dom-module>

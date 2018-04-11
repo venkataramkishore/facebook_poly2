@@ -1,0 +1,79 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../redux-store/redux-store.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+
+<dom-module id="nav-about-photos-friends">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+        border-top: 1px solid lightgrey;
+      }
+      nav {
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+    </style>
+    <nav>
+        <a href="">About</a>
+        <div class="vertical-line"></div>
+        <a href="">Photos</a>
+        <div class="vertical-line"></div>
+        <a href="">Friends</a>
+    </nav>
+    
+  </template>
+
+  <script>
+    /**
+     * `about-photos-friends` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class NavAboutPhotosFriends extends ReduxStore(Polymer.Element) {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'nav-about-photos-friends';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+
+        Polymer.RenderStatus.afterNextRender(this, function () {
+
+        });
+      }
+
+    }
+
+    window.customElements.define(NavAboutPhotosFriends.is, NavAboutPhotosFriends);
+  </script>
+</dom-module>

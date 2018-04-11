@@ -1,0 +1,121 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../redux-store/redux-store.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+
+<dom-module id="user-feed">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+        height: 45vh;
+        border-top: 1px solid lightgrey;
+      }
+
+      .header-layout {
+        display: flex;
+        height: 8vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px 0 10px;
+      }
+
+      p {
+        height: 6vh;
+      }
+
+      .empty-image {
+        background-image: url('../../../../images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0000_photo.png');
+        background-size: contain;
+        width: 100%;
+        height: 24vh;
+      }
+
+      .content-header {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .feed-template {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+    </style>
+    <section class="feed-template">
+      <header class="header-layout">
+        <section class="content-header">
+          <i class="user-dp"></i>
+          <ul>
+            <li>
+              <h4 class="title">Anil</h4>
+            </li>
+            <li>
+              <h6 class="sub-title">
+                Today at 23:45
+                <iron-icon class="icon-world" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0000s_0003_world-icon.png"></iron-icon>
+              </h6>
+            </li>
+          </ul>
+        </section>
+        <iron-icon class="icon-world" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0002s_0000s_0004_arrow.png"></iron-icon>
+      </header>
+      <p>I really love this layout !!
+        <br/> Please share more at http://marinad.com.ar</p>
+      <p class="grey-text">See translation</p>
+      <div class="empty-image"></div>
+    </section>
+
+  </template>
+
+  <script>
+    /**
+     * `user-feed` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class UserFeed extends ReduxStore(Polymer.Element) {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'user-feed';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+          posts: {
+            type: Object,
+            statePath: 'friends.0.posts'
+          }
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+      }
+
+    }
+
+    window.customElements.define(UserFeed.is, UserFeed);
+  </script>
+</dom-module>

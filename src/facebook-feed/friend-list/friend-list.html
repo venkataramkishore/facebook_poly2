@@ -1,0 +1,106 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../redux-store/redux-store.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+
+<dom-module id="friend-list">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+        height: 15vh;
+      }
+
+      nav {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      figure {
+        margin: 2px;
+      }
+
+      .selected {
+        border: 2px solid blue;
+        padding: 1px;
+      }
+    </style>
+
+    <nav>
+      <figure>
+        <!-- <img src="./images/Assets/Feed/[414x768]-Facebook-Feed_0001s_0000s_0000_plane-icon.png"> -->
+        <img class="friends-list" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0001s_0004s_0000_circle.png">
+        <iron-icon class="icon-direct" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0001s_0000s_0000_plane-icon.png"></iron-icon>
+        <figcaption>Direct</figcaption>
+      </figure>
+      <div class="vertical-line"></div>
+      <figure>
+        <img class="friends-list"
+        src="./images/Assets/Feed/[414x768]-Facebook-Feed_0001s_0003s_0001_Story.png">
+        <span class="icon-blue-plus">+</span>
+        <figcaption>Your Story</figcaption>
+      </figure>
+      <template is="dom-repeat" items="{{friends}}" as="friend">
+        <figure>
+          <img class$="friends-list [[_selectFirstFriend(index)]]" src="./images/Assets/Feed/[414x768]-Facebook-Feed_0001s_0003s_0001_Story.png"
+            alt="[[friend.name]]">
+          <figcaption>[[friend.name]]</figcaption>
+        </figure>
+      </template>
+    </nav>
+  </template>
+
+  <script>
+    /**
+     * `friend-list` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class FriendList extends ReduxStore(Polymer.Element) {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'friend-list';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+          friends: {
+            type: Array,
+            statePath: 'friends'
+          }
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+      }
+      _selectFirstFriend(index) {
+        return index === 0 ? 'selected' : '';
+      }
+    }
+
+    window.customElements.define(FriendList.is, FriendList);
+  </script>
+</dom-module>

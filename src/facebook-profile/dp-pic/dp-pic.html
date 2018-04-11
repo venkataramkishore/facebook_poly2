@@ -1,0 +1,88 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+<dom-module id="dp-pic">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+      }
+
+      .dp-layout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        /* background-image: url('../../../images/Assets/Profile/[414x768]-Facebook-Profile_0000s_0004_searchbar.png'); */
+      }
+
+      img {
+        border: 3px solid white;
+        width: 40vw;
+        height: 20vh;
+      }
+      
+      figure {
+        margin-top: -80px;
+      }
+
+      .grey-layout {
+        height: 25vh;
+        width: 100%;
+      }
+    </style>
+    <div class="grey-layout"></div>
+    <div class="dp-layout">
+      <figure>
+        <img class="" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0002s_0002_profile-image-(double-click-to-edit)).png">
+        <figcaption><strong>Your Name</strong></figcaption>
+      </figure>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `dp-pic` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class DpPic extends Polymer.Element {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'dp-pic';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+      }
+
+    }
+
+    window.customElements.define(DpPic.is, DpPic);
+  </script>
+</dom-module>

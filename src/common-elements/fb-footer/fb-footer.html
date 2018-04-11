@@ -1,0 +1,103 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../shared-styles/fb-shared-styles.html">
+
+<dom-module id="fb-footer">
+  <template>
+    <style include="fb-shared-styles">
+      :host {
+        display: block;
+        height: 8vh;
+      }
+
+      footer {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 5px solid lightgrey;
+      }
+    </style>
+    <footer>
+      <template is="dom-if" if="{{elements}}">
+        <iron-icon class="icon-emoji" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0001s_0000_feed-bt.png">
+        </iron-icon>
+        <iron-icon class="icon-emoji" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0001s_0001_friends-bt.png">
+        </iron-icon>
+        <div>
+          <iron-icon class="icon-emoji" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0001s_0004_notifications-bt.png">
+          </iron-icon>
+          <span class="notifications">2</span>
+        </div>
+        <iron-icon class="icon-emoji" src="./images/Assets/Profile/[414x768]-Facebook-Profile_0001s_0005_profile-bt.png">
+        </iron-icon>
+      </template>
+      <template is="dom-if" if="{{notes}}">
+        <nav>
+          <span>About</span>
+          <span>Create Ad</span>
+          <span>Create Page</span>
+          <span>Developers</span>
+          <span>Careers</span>
+          <span>Privacy</span>
+          <span>Cookies</span>
+          <span>Terms</span>
+          <span>Help</span>
+        </nav>
+        <div>
+          Testbook 2018
+          <a href="">English (c) (US)</a>
+        </div>
+      </template>
+    </footer>
+
+  </template>
+
+  <script>
+    /**
+     * `fb-footer` Description
+     *
+     * @summary ShortDescription.
+     * @customElement
+     * @polymer
+     * @extends {Polymer.Element}
+     */
+    class FbFooter extends Polymer.Element {
+      /**
+       * String providing the tag name to register the element under.
+       */
+      static get is() {
+        return 'fb-footer';
+      }
+
+      /**
+       * Object describing property-related metadata used by Polymer features
+       */
+      static get properties() {
+        return {
+          elements: Boolean,
+          notes: Boolean
+        };
+      }
+
+      /**
+       * Instance of the element is created/upgraded. Use: initializing state,
+       * set up event listeners, create shadow dom.
+       * @constructor
+       */
+      constructor() {
+        super();
+      }
+
+      /**
+       * Use for one-time configuration of your component after local DOM is initialized. 
+       */
+      ready() {
+        super.ready();
+      }
+
+    }
+
+    window.customElements.define(FbFooter.is, FbFooter);
+  </script>
+</dom-module>

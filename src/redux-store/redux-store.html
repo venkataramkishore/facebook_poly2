@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer-redux/polymer-redux.html">
+<script src="../../node_modules/redux/dist/redux.js"></script>
+<script>
+  // Setup a Redux store
+  const initial = {
+    message: 'Hello, World!',
+    friends: [{
+      name: 'Anil',
+      disPic: '',
+      posts: [{
+        name: 'Anil',
+        text: 'I really love this layout !! \n Please share more at http://marinad.com.ar'
+      }]
+    },
+    {
+      name: 'Kishore',
+      disPic: ''
+    },
+    {
+      name: 'Shyam',
+      disPic: ''
+    }],
+    educationLocationDetails: {
+      work: 'MarinaD.com.ar',
+      study: 'UBA',
+      live: 'California, USA',
+      location: 'Bs As, Argentina'
+    }
+  };
+  const reducer = state => state;
+  const store = Redux.createStore(reducer, initial);
+
+  // Export the ReduxStore
+  ReduxStore = PolymerRedux(store);
+</script>
